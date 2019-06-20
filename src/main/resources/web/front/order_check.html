@@ -59,7 +59,7 @@
 			<h4>送货清单</h4>
 			<table class="table">
 				<tr>
-					<th width="50%">商品</th>
+					<th width="50%">产品</th>
 					<th>单价（元）</th>
 					<th>数量</th>
 					<th>小计</th>
@@ -67,10 +67,10 @@
 				<#if list??>
 					<#list list as od>
 						<tr>
-							<input type="hidden" name="goodsInfos" value="${(od.goodsId)!},${(od.ordeNumber)!},${(od.orderPrice)!}">
-							<td><a href="/goodsinfo/${(od.goodsId)!}"> <img 
-							style="width:50px;height:75px;object-fit:contain" src="${(od.goodsUrl)!}">
-							${(od.goodsName)!}
+							<input type="hidden" name="productInfos" value="${(od.productId)!},${(od.ordeNumber)!},${(od.orderPrice)!}">
+							<td><a href="/productinfo/${(od.productId)!}"> <img 
+							style="width:50px;height:75px;object-fit:contain" src="${(od.productUrl)!}">
+							${(od.productName)!}
 							</a></td>
 							<td>${(od.orderPrice)!}</td>
 							<td>${(od.ordeNumber)!}</td>

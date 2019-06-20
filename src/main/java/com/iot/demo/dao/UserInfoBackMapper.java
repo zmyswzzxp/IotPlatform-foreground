@@ -30,13 +30,13 @@ public interface UserInfoBackMapper {
 	 * 根据条件查询用户信息
 	 * @param userInfo
 	 */
-	public UserInfoBack getUserInfo(UserInfoBack userInfo);
+	public UserInfoBack getUserInfoBack(UserInfoBack userInfoBack);
 	
 	/**
 	 * 修改用户信息
 	 * @param userInfo
 	 */
-	public void updateUserInfo(UserInfoBack userInfo);
+	public void updateUserInfo(UserInfoBack userInfoBack);
     
     //
 //    int deleteByExample(UserInfoBackExample example);

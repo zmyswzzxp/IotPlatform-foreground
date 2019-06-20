@@ -84,13 +84,20 @@ public class UserInfoBackServiceImpl implements UserInfoBackService  {
 	
 	
 	@Override
-	public UserInfoBack loadUpdateUserInfo(UserInfoBack userInfo) {
-		return userInfoBackMapper.getUserInfo(userInfo);
+	public UserInfoBack loadUpdateUserInfo(UserInfoBack userInfoBack) {
+		return userInfoBackMapper.getUserInfoBack(userInfoBack);
 	}
 
 	@Override
 	public void updateUserInfo(UserInfoBack userInfo) throws Exception{
 		userInfoBackMapper.updateUserInfo(userInfo);
+	}
+
+
+	@Override
+	public UserInfoBack doLogin(UserInfoBack userInfoBack) {
+		// TODO Auto-generated method stub
+		return userInfoBackMapper.getUserInfoBack(userInfoBack);
 	}
 
 }

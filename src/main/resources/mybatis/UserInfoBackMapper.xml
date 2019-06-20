@@ -58,7 +58,7 @@
 		delete from user_info_back where user_id = #{userId}
 	</delete>
 	
-		<select id="getUserInfo" parameterType="UserInfoBack" resultMap="usermap">
+		<select id="getUserInfoBack" parameterType="UserInfoBack" resultMap="usermap">
 		select * from user_info_back
 		<where>
 			<if test="userId != null and userId != ''">

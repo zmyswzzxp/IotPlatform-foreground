@@ -57,5 +57,5 @@ public interface UserInfoBackService {
 //	
 //	public void deleteUserInfo(UserInfo userInfo)throws Exception ;
 //	
-//	public UserInfo doLogin(UserInfo userInfo);
+	public UserInfoBack doLogin(UserInfoBack userInfoBack);
 }

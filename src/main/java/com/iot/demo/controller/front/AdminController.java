@@ -9,9 +9,12 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.iot.demo.bean.ConsigneeManagement;
 import com.iot.demo.bean.OrderDetail;
@@ -36,6 +39,8 @@ public class AdminController {
 	
 	@Autowired
 	private OrderManagementService omService;
+	
+	
 	
 	@RequestMapping("ordercheck")
 	public String orderCheck(String[] keys,Integer[] number,HttpSession session,Model model){
@@ -102,4 +107,7 @@ public class AdminController {
 		return "front/orderok";
 		
 	}
+	
+	
+	
 }

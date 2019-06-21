@@ -7,10 +7,14 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.iot.demo.bean.ProductInfo;
 import com.iot.demo.bean.UserInfoBack;
 import com.iot.demo.service.ProductsInfoService;
@@ -28,7 +32,22 @@ public class FrontController {
 	
 	@Autowired
 	private UserInfoBackService userinfobackservice;
+	@Autowired
+	private DiscoveryClient client;
 	
+    @RequestMapping(value = "index2", method = RequestMethod.GET)
+	public Object discovery()
+	{
+		List<String> list = client.getServices();
+		System.out.println("**********" + list);
+
+		List<ServiceInstance> srvList = client.getInstances("IotPlatform-foreground");
+		for (ServiceInstance element : srvList) {
+			System.out.println(element.getServiceId() + "\t" + element.getHost() + "\t" + element.getPort() + "\t"
+					+ element.getUri());
+		}
+		return this.client;
+	}
 	
 	@RequestMapping("index")
 	public String index(Model model){
